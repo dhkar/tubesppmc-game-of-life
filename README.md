@@ -4,7 +4,7 @@ Code Repository for Conway's Game of Life by Kelompok 3 Romb. A Tugas Besar PPMC
 Nama Kelompok :
 1. Andhika Rahadian (13218030)
 2. Sabrina Adeline (13218014)
-3. (isi nama kamu)
+3. Melia Fatimah (13218020)
 4. Muhammad Adnan (13218019)
 
 Jangan lupa urut nim yaa gaes
