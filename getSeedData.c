@@ -8,7 +8,7 @@
 *   Deskripsi : Fitur mengubah seedfile menjadi seedarray (untuk testcase)
 *   Catatan : Third commit getSeedData.c, fitur untuk mengubah seedfile menjadi seedarray
 *           sudah berhasil dijalankan, second commit karena lupa tambah header ini. Third commit
-*           mengubah glider-gun.txt menjadi input user filename
+*           mengubah glider-gun.txt menjadi input user filename.
 *           
 */
 #include <stdio.h>
