@@ -4,8 +4,8 @@
 *   Rombongan : A
 *   Hari dan Tanggal : Selasa, 7 April 2020
 *   Asisten (NIM) : Arief Hirmanto (13217076)
-*   Nama File : main.c
-*   Deskripsi : Fitur mengubah seedfile menjadi seedarray (untuk file test)
+*   Nama File : getSeedData.c
+*   Deskripsi : Fitur mengubah seedfile menjadi seedarray (untuk testcase)
 *   Catatan : Third commit getSeedData.c, fitur untuk mengubah seedfile menjadi seedarray
 *           sudah berhasil dijalankan, second commit karena lupa tambah header ini. Third commit
 *           mengubah glider-gun.txt menjadi input user filename
