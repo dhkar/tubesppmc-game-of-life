@@ -1,3 +1,15 @@
+/* EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020
+* MODUL 9 – TUGAS BESAR
+* Kelompok : 3
+* Rombongan : A
+* Hari dan Tanggal : Selasa, 7 April 2020
+* Asisten (NIM) : Arief Hirmanto (13217076)
+* Nama File : main.c
+* Deskripsi : Fitur mengubah seedfile menjadi seedarray (untuk file test)
+* Catatan : First commit getSeedData.c, fitur untuk mengubah seedfile menjadi seedarray
+*           sudah berhasil dijalankan 
+*           
+*/
 #include <stdio.h>
 #include <stdlib.h>
 // Bismillahirrahmanirrahim
