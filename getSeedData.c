@@ -1,13 +1,14 @@
-/* EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020
-* MODUL 9 – TUGAS BESAR
-* Kelompok : 3
-* Rombongan : A
-* Hari dan Tanggal : Selasa, 7 April 2020
-* Asisten (NIM) : Arief Hirmanto (13217076)
-* Nama File : main.c
-* Deskripsi : Fitur mengubah seedfile menjadi seedarray (untuk file test)
-* Catatan : First commit getSeedData.c, fitur untuk mengubah seedfile menjadi seedarray
-*           sudah berhasil dijalankan 
+/*  EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020
+*   MODUL 9 – TUGAS BESAR
+*   Kelompok : 3
+*   Rombongan : A
+*   Hari dan Tanggal : Selasa, 7 April 2020
+*   Asisten (NIM) : Arief Hirmanto (13217076)
+*   Nama File : main.c
+*   Deskripsi : Fitur mengubah seedfile menjadi seedarray (untuk file test)
+*   Catatan : Third commit getSeedData.c, fitur untuk mengubah seedfile menjadi seedarray
+*           sudah berhasil dijalankan, second commit karena lupa tambah header ini. Third commit
+*           mengubah glider-gun.txt menjadi input user filename
 *           
 */
 #include <stdio.h>
@@ -73,7 +74,10 @@ int main() {
     int c;
     int n = 0;
     int x_dimension,y_dimension;
-    fptr = fopen("glider-gun.txt","r");
+    char filename[50];
+    printf("Masukkan filename: ");
+    scanf("%s",filename);
+    fptr = fopen(filename,"r");
     char **seedData;
     
     // testing print seedData
