@@ -55,3 +55,24 @@
             }
             return newseedTemp;
         }
+
+int main(){
+    FILE *file_pointer;
+    int x_dim, y_dim;
+    char nama_file[50];
+    char **newseedData;
+
+    printf("Masukkan nama file: ");
+    gets(nama_file);
+
+    file_pointer = fopen(nama_file, "r");
+
+    newseedData = tick(seedData, &x_dim, &y_dim);
+
+    printf(" %c %c %c %c %c %c %c %c %c\n", newseedData[2][1], newseedData[2][2], newseedData[2][3], newseedData[2][4], newseedData[2][5], newseedData[2][6], newseedData[2][7], newseedData[2][8], newseedData[2][9]);
+    printf(" %c %c %c %c %c %c %c %c %c\n", newseedData[2][1], newseedData[3][2], newseedData[3][3], newseedData[3][4], newseedData[3][5], newseedData[3][6], newseedData[3][7], newseedData[3][8], newseedData[3][9]);
+    printf(" %c %c %c %c %c %c %c %c %c\n", newseedData[2][1], newseedData[4][2], newseedData[4][3], newseedData[4][4], newseedData[4][5], newseedData[4][6], newseedData[4][7], newseedData[4][8], newseedData[4][9]);
+    printf(" %c %c %c %c %c %c %c %c %c\n", newseedData[2][1], newseedData[5][2], newseedData[5][3], newseedData[5][4], newseedData[5][5], newseedData[5][6], newseedData[5][7], newseedData[5][8], newseedData[5][9]);
+    printf(" %c %c %c %c %c %c %c %c %c\n", newseedData[2][1], newseedData[6][2], newseedData[6][3], newseedData[6][4], newseedData[6][5], newseedData[6][6], newseedData[6][7], newseedData[6][8], newseedData[6][9]);
+}
+
