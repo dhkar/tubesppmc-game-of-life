@@ -2,78 +2,48 @@
 #include <stdlib.h>
 #include <time.h> 
 
-void delay(int number_of_seconds);                                      //Delay 250ms
-void Tick(char **seedData, int x_dim, int y_dim);                       //Animate 1 time
-int neighbors(char **seedData, int x_dim, int y_dim ,int i, int j);                          //Check cell condition
-void Animate(char **seedData, int x_dim, int y_dim, int num_of_ticks);  //Animate num_of_ticks times
+void delay(int number_of_seconds);                                      // Delay 250ms
+char** tick(char **seedData, int* x_dim, int* y_dim);                     // Animate 1 time
+void Animate(char **seedData, int* x_dim, int* y_dim, int num_of_ticks);  // Animate num_of_ticks times
 
-void delay(int number_of_seconds) 
+void delay(int milli_seconds) 
 { 
-    int milli_seconds = 1000 * number_of_seconds; 
+    int ms =  milli_seconds;
     clock_t start_time = clock(); 
-    while (clock() < start_time + milli_seconds);
+    while (clock() < start_time + ms);
 } 
 
-int neighbors(char **seedData, int x_dim, int y_dim ,int i, int j){           //Check number of neighbors
-    int count, k, l;
-    if (i == 0 && j == 0){                  //Corner Cell
-        
-    }else if (i == 0 && j != 0){            //Top or Bottom Row
+int neighbors(char **seedData, int x_dim, int y_dim ,int i, int j){  // Check number of neighbors
+   
+}
 
-    }else if (i != 0 && j == 0){            //Left or Right Column
-
-    }else{
-
-    }
+char** tick(char **seedData, int* x_dim, int* y_dim){
 
 }
 
-void Tick(char **seedData, int x_dim, int y_dim){
-    int i, j; // x = kolom, y = baris
-    for (i=0; i<=y_dim; i++){
-        for (j=0; j<=x_dim; j++){
-            switch (neighbors(seedData, x_dim, y_dim, i, j))
-            {
-            case 1:             //underpopulation
-                seedData[i][j] = '-';
-                break;
-
-            case 2:             //next generation
-                seedData[i][j] = 'X';
-                break;
-
-            case 3:             //overpopulation
-                seedData[i][j] = '-';
-                break;
-
-            case 4:             //reproduction
-                seedData[i][j] = 'X';
-                break;
-            
-            default:
-                break;
-            }
-        }
+void Animate(char **seedData, int* x_dim, int* y_dim, int num_of_ticks){
+    char **newseedData;
+    int k=0, x = *x_dim, y = *y_dim;
+    newseedTemp = malloc(x * sizeof(*newseedTemp));
+    for (int i = 0; i < x; i++) {
+        newseedTemp[i] = malloc(y * sizeof(newseedTemp[0]));
     }
-}
-
-
-void Animate(char **seedData, int x_dim, int y_dim, int num_of_ticks){
-    system("@cls||clear");
-    int i=0;
-    while (i<=num_of_ticks)
+    newseedData = tick(seedData,&x,&y);
+    while (k<num_of_ticks)
     {
-        Tick(seedData, x_dim, y_dim);
+        displaySeed(newseedData,&x,&y);
         delay(250);
-        i++;
+        newseedData = tick(newseedData,&x,&y);
+        system("@cls||clear");
+        k++;
     }
-    
-}
-
-int main(){
-    char **seedData;
-    int num_of_ticks, x_dim, y_dim;
-    Animate(seedData, x_dim, y_dim, num_of_ticks);
 }
 
 
+int main() {
+    printf("Masukan jumlah ticks : ");                          // Masukin ke main
+    int num_of_ticks;
+    scanf("%d", &num_of_ticks);
+    Animate(seedData, &x_dimension, &y_dimension,num_of_ticks);
+}
+   
