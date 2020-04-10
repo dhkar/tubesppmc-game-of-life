@@ -1,3 +1,16 @@
+/* EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020
+* MODUL 9 – TUGAS BESAR
+* Kelompok : 3
+* Hari dan Tanggal : Jumat, 10 April 2020
+* Asisten (NIM) : Arief H. (13217076)
+* Nama File : tick_new.c
+* Deskripsi : 
+* Fungsi tick untuk menyimpan 1 generasi setelah generasi yang menjadi parameter
+* I.S. terdapat array 2D (seedData) yang memiliki alokasi memori sebagai parameter 
+* fungsi, panjang dan lebar array seedData
+* F.S. mengembalikan data berupa array 2D dynamic yang berisi data seed 1 generasi setelah generasi yang menjadi parameter
+*/
+
 char **tick(char **seedData, int *x_dim, int *y_dim)
 {
     int neighbors;
