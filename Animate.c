@@ -13,10 +13,6 @@ void delay(int milli_seconds)
     while (clock() < start_time + ms);
 } 
 
-int neighbors(char **seedData, int x_dim, int y_dim ,int i, int j){  // Check number of neighbors
-   
-}
-
 char** tick(char **seedData, int* x_dim, int* y_dim){
 
 }
