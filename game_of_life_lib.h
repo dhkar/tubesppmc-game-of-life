@@ -11,6 +11,7 @@
 */
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h> 
 #ifndef GAME_OF_LIFE_LIB_H
 #define GAME_OF_LIFE_LIB_H
 
@@ -131,6 +132,31 @@
         }
         return newseedTemp;
     }
+
+void delay(int milli_seconds) 
+{ 
+    int ms =  milli_seconds;
+    clock_t start_time = clock(); 
+    while (clock() < start_time + ms);
+} 
+
+void Animate(char **seedData, int* x_dim, int* y_dim, int num_of_ticks){
+    char **newseedData;
+    int k=0, x = *x_dim, y = *y_dim;
+    newseedTemp = malloc(x * sizeof(*newseedTemp));
+    for (int i = 0; i < x; i++) {
+        newseedTemp[i] = malloc(y * sizeof(newseedTemp[0]));
+    }
+    newseedData = tick(seedData,&x,&y);
+    while (k<num_of_ticks)
+    {
+        displaySeed(newseedData,&x,&y);
+        delay(250);
+        newseedData = tick(newseedData,&x,&y);
+        system("@cls||clear");
+        k++;
+    }
+}
 
 
 #endif
