@@ -15,7 +15,10 @@
 #include <stdlib.h>
 
 int main(){
-
+    printf("Masukan jumlah ticks : ");                          // From Animate
+    int num_of_ticks;
+    scanf("%d", &num_of_ticks);
+    Animate(seedData, &x_dimension, &y_dimension,num_of_ticks);
     /* ====== ALGORITMA PROGRAM UTAMA =========*/
 
     /*  1. Input dari user : char namafile[]

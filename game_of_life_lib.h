@@ -2,7 +2,7 @@
 *   MODUL 9 – TUGAS BESAR
 *   Kelompok : 3
 *   Rombongan : A
-*   Hari dan Tanggal : Selasa, 7 April 2020
+*   Hari dan Tanggal : Jumat, 10 April 2020
 *   Asisten (NIM) : Arief Hirmanto (13217076)
 *   Nama File : game_of_life_lib.h
 *   Deskripsi : file library untuk conway's game_of_life
@@ -11,6 +11,7 @@
 */
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h> 
 #ifndef GAME_OF_LIFE_LIB_H
 #define GAME_OF_LIFE_LIB_H
 
@@ -76,6 +77,7 @@
         free(*arr);
         free(arr);
     }
+
 
 
     /* Fungsi tick untuk menyimpan 1 generasi setelah generasi yang menjadi parameter
@@ -168,6 +170,41 @@ char **tick(char **seedData, int *x_dim, int *y_dim)
                     
             }
         
+
+    /* Fungsi delay
+        I.S. terdapat parameter milli_seconds dari input user yang merupakan waktu dalam 
+        satuan ms
+        F.S. mengembalikan data berupa delay selama input 
+    */
+    void delay(int milli_seconds) 
+    { 
+        int ms =  milli_seconds;
+        clock_t start_time = clock(); 
+        while (clock() < start_time + ms);
+    } 
+
+    /* Fungsi delay
+        I.S. terdapat parameter file_pointer dari seedfile dan dimensi sumbu x, dimensi sumbu y
+             dalam bentuk pointer to integer untuk menyimpan jumlah baris dan kolom, serta
+             num_of_ticks untuk mengetahui jumlah iterasi tick
+        F.S. mencetak generasi selanjutnya dari seed berulang kali sebanyak num_of_ticks
+    */
+    void Animate(char **seedData, int* x_dim, int* y_dim, int num_of_ticks){
+        char **newseedData;
+        int k=0, x = *x_dim, y = *y_dim;
+        newseedTemp = malloc(x * sizeof(*newseedTemp));
+        for (int i = 0; i < x; i++) {
+            newseedTemp[i] = malloc(y * sizeof(newseedTemp[0]));
+        }
+        newseedData = tick(seedData,&x,&y);
+        while (k<num_of_ticks)
+        {
+            displaySeed(newseedData,&x,&y);
+            delay(250);
+            newseedData = tick(newseedData,&x,&y);
+            system("@cls||clear");
+            k++;
+
         }
     }
     return newseedTemp;
