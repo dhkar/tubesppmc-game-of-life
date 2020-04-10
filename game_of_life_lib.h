@@ -2,7 +2,7 @@
 *   MODUL 9 – TUGAS BESAR
 *   Kelompok : 3
 *   Rombongan : A
-*   Hari dan Tanggal : Selasa, 7 April 2020
+*   Hari dan Tanggal : Jumat, 10 April 2020
 *   Asisten (NIM) : Arief Hirmanto (13217076)
 *   Nama File : game_of_life_lib.h
 *   Deskripsi : file library untuk conway's game_of_life
