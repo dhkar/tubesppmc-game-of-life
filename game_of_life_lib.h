@@ -6,7 +6,8 @@
 *   Asisten (NIM) : Arief Hirmanto (13217076)
 *   Nama File : game_of_life_lib.h
 *   Deskripsi : file library untuk conway's game_of_life
-*   Catatan : add function Animate(), delay(), tick(), sudah di merge
+*   Catatan : add function Animate(), delay(), tick(), sudah di merge dari branch masing masing ke
+*             master branch
 *           
 */
 #include <stdio.h>
