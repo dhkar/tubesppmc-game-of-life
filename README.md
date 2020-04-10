@@ -32,6 +32,8 @@ Adapun fungsi fungsi yang ada dalam game_of_life_lib.h adalah :
 
 Sementara untuk fungsi fungsi yang ada di display.h adalah:
 
-====nanti sabi tambahin disini=====
+1. displaySeed()
+2. displayMenu()
+3. displayInterface()
 
 Penjelasan fungsi (initial state dan final statenya) sudah ada didalam file header.  
