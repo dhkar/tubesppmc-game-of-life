@@ -1,26 +1,29 @@
-//tubes ppmc
-//trial bagian display
+/*  EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020
+*   MODUL 9 – TUGAS BESAR
+*   Kelompok : 3
+*   Rombongan : A
+*   Hari dan Tanggal : Jumat, 10 April 2020
+*   Asisten (NIM) : Arief Hirmanto (13217076)
+*   Nama File : display.c
+*   Deskripsi : fungsi displaySeed, displayInterface, dan displayMenu
+*   Catatan : memperbaiki ketiga fungsi
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <display.h>
 
-void displaySeed(){
-    char nama[100];
-    printf("input file seed : ");
-    gets(nama);
-    FILE *file_seed = fopen(nama, "r");
-    int baris = 0;
-    char s[1024];
-    while(fgets(s, 1024, file_seed)){
-        baris++;
-        printf("%s", s);
+char **displaySeed(char **seedData, int *x_dim, int *y_dim){
+    int i;
+    int j;
+    for(i=0; i<=y_dim; i++){
+        for(j=0; j<=x_dim; j++){
+            printf("%c ", seedData[i][j]);
+        }
+        printf("\n");
     }
-
-    fclose(file_seed);
 }
 
-void displayMenu(int *game_over){
+int displayMenu(){
     int pilihan;
     printf("\n\nPilihan menu: \n");
     printf("1. Animate\n");
@@ -28,45 +31,14 @@ void displayMenu(int *game_over){
     printf("3. Quit\n");
     printf("Masukkan menu yang dipilih : ");
     scanf("%d", &pilihan);
-    if(pilihan == 1){
-        printf("fungsi animate()");
-    }else if(pilihan == 2){
-        printf("fungsi tick()");
-    }else{
-        *game_over = 1;
-    }
+    return pilihan;
 }
 
 void displayInterface(){
+    printf("\n====================================================\n");
     printf("\n---------------------Welcome to---------------------\n");
     printf("\n--------------------Game of Life--------------------\n");
+    printf("\n====================================================\n");
 }
 
-/*int main()
-{
-   int game_over = 0;
-   int pilihan_quit;
-   displayInterface();
-   displaySeed();
-   while (game_over == 0){
-        displayMenu(&game_over);
-   }
-   if (game_over == 1){
-        printf("Apakah masih ingin bermain?\n");
-        printf("1. Ya\n");
-        printf("2. Tidak\n");
-        printf("pilihan : ");
-        scanf("%d", &pilihan_quit);
-        if(pilihan_quit == 1){
-            printf("fungsi getSeedData()\n");
-            displaySeed();
-        }else if(pilihan_quit == 2){
-            printf("Game Over\n");
 
-        }else{
-            printf("pilihan salah\n");
-        }
-   }
-
-   return 0;
-}*/
