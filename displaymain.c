@@ -1,5 +1,5 @@
 /*  EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020
-*   MODUL 9 – TUGAS BESAR
+*   MODUL 9 - TUGAS BESAR
 *   Kelompok : 3
 *   Rombongan : A
 *   Hari dan Tanggal : Sabtu, 11 April 2020
@@ -27,40 +27,43 @@ int main()
     displayInterface();
     //displaySeed(seedData, &x_dim, &y_dim);
 
-    while (start == 0){
+    while(start == 0){
+        quit = 0;
         printf("\nMasukkan nama file seed : ");
-        gets(filename);
+        scanf("%s",filename);
         FILE *fptr;
         fptr = fopen(filename, "r");
         if(fptr == NULL){
             printf("\nmohon maaf tidak terdapat file %s, coba lagi..\n", filename);
-            start = 0;
         }else{
-            pilihan_menu = displayMenu();
-            switch(pilihan_menu)
-            {
-            case 1:
-                //fungsi Animate();
-                printf("Animate()\n");
-                break;
-            case 2:
-                //fungsi Tick();
-                printf("Tick()\n");
-                break;
-            case 3:
-                printf("Apakah masih ingin bermain? \n");
-                printf("ketik Ya / Tidak\n");
-                printf("pilihan: ");
-                scanf("%s ", pilihan_quit);
-                if(strcmp(pilihan_quit,"Ya")== 0){
-                    start = 0;
-                }else{
-                    start = 1;
+            while(quit == 0){
+                pilihan_menu = displayMenu();
+                switch(pilihan_menu)
+                {
+                case 1:
+                    //fungsi Animate();
+                    printf("Animate()\n");
+                    break;
+                case 2:
+                    //fungsi Tick();
+                    printf("Tick()\n");
+                    break;
+                case 3:
+                    printf("Apakah masih ingin bermain? \n");
+                    printf("ketik Ya / Tidak\n");
+                    printf("pilihan: ");
+                    scanf("%s", pilihan_quit);
+                    if(strncmp(pilihan_quit,"Ya",2)== 0){
+                        fclose(fptr);
+                        quit = 1;
+                    }else{
+                        fclose(fptr);
+                        printf("\nTerima kasih telah bermain.\n");
+                        quit = 1;
+                        start = 1;
+                    }
+                    break;
                 }
-                break;
-            default:
-                printf("Terima kasih telah bermain.");
-            break;
             }
         }
     }
