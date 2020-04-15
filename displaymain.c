@@ -27,48 +27,6 @@ int main()
     displayInterface();
     //displaySeed(seedData, &x_dim, &y_dim);
 
-   /* while(start == 0){
-        printf("Masukkan nama file seed: ");
-        gets(filename);
-        FILE *fptr;
-        fptr = fopen(filename , "r");
-        if(fptr == NULL){
-            printf("tidak terdapat file %s , coba lagi..\n", filename);
-            start = 0;
-        }else{
-            start = 1;
-        }
-    }
-
-    while(game_over == 0){
-        pilihan_menu = displayMenu();
-        switch(pilihan_menu)
-        {
-            case 1:
-                //Animate();
-                printf("Animate()\n");
-                break;
-            case 2:
-                //Tick();
-                printf("Tick()\n");
-                break;
-            case 3:
-                printf("Apakah masih ingin bermain?\n");
-                printf("1. Iya dong\n");
-                printf("2. Ngga ah capek\n");
-                printf("pilihan : ");
-                scanf("%d", &pilihan_quit);
-                if(pilihan_quit == 1){
-                    start = 0;
-                }else{
-                    game_over = 1;
-                }
-                break;
-            default:
-                printf("masukkan angka tidak sesuai, coba lagi..");
-            break;
-        }
-    }*/
     while (start == 0){
         printf("\nMasukkan nama file seed : ");
         gets(filename);
