@@ -2,11 +2,11 @@
 *   MODUL 9 - TUGAS BESAR
 *   Kelompok : 3
 *   Rombongan : A
-*   Hari dan Tanggal : Sabtu, 11 April 2020
+*   Hari dan Tanggal : Rabu, 15 April 2020
 *   Asisten (NIM) : Arief Hirmanto (13217076)
 *   Nama File : displaymain.c
 *   Deskripsi : main untuk display
-*   Catatan : masih terdapat bug pada case, masih ada beberapa testcase yang salah jika input saat quit
+*   Catatan : udah bener tinggal gabungin sama fungsi animate(), sama tick()
 */
 #include <stdio.h>
 #include <stdlib.h>
