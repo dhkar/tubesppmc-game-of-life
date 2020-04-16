@@ -1,5 +1,5 @@
 /*  EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020
-*   MODUL 9 – TUGAS BESAR
+*   MODUL 9 - TUGAS BESAR
 *   Kelompok : 3
 *   Rombongan : A
 *   Hari dan Tanggal : Jumat, 10 April 2020
@@ -9,7 +9,7 @@
 *   Catatan : memperbaiki ketiga fungsi
 */
 
-char **displaySeed(char **seedData, int *x_dim, int *y_dim);
+void displaySeed(char **seedData, int *x_dim, int *y_dim);
 int displayMenu();
 void displayInterface();
 

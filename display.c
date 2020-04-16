@@ -17,12 +17,12 @@
     I.S. terdapat array seed 2D yang sudah melalui proses animate atau tick
     F.S. array 2D tersebut dicetak sehingga terlihat dalam cmd
 */
-char **displaySeed(char **seedData, int *x_dim, int *y_dim)
+void displaySeed(char **seedData, int *x_dim, int *y_dim)
 {
     int i;
     int j;
-    for(i=0; i<=*y_dim; i++){
-        for(j=0; j<=*x_dim; j++){
+    for(i=0; i< *y_dim; i++){
+        for(j=0; j< *x_dim; j++){
             printf("%c ", seedData[i][j]);
         }
         printf("\n");
