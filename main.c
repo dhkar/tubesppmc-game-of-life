@@ -1,74 +1,78 @@
-/* EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020
-* MODUL 9 – TUGAS BESAR
-* Kelompok : 3
-* Rombongan : A
-* Hari dan Tanggal : Jumat, 3 April 2020
-* Asisten (NIM) : Arief Hirmanto (13217076)
-* Nama File : main.c
-* Deskripsi : Program utama dari implementasi Game Of Life
-* Catatan : First commit of main.c, yaitu hanya sebatas algoritma kasar program utama, 
-*           belum implementasi fungsi secara mendetail
-*           
+/*  EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020
+*   MODUL 9 - TUGAS BESAR
+*   Kelompok : 3
+*   Rombongan : A
+*   Hari dan Tanggal : Kamis, 16 April 2020
+*   Asisten (NIM) : Arief Hirmanto (13217076)
+*   Nama File : main1.c
+*   Deskripsi : ga ak merge soalnya coba gabungin main menu sama fungsi
+*   Catatan : menggabungkan game_of_life_lib pada main program (blom selesai)
+                yang punya adnan fungsi Animate ada masalah di newseedTemp
 */
-
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include "display.h"
+#include "game_of_life_lib.h"
 
-int main(){
+int main()
+{
+    char filename[40];
+    int x_dim, y_dim;
+    char **seedData;
+    int pilihan_menu;
+    int start = 0;
+    int quit = 0;
+    char pilihan_quit[10];
+    int num_of_ticks;
 
-    /* ====== ALGORITMA PROGRAM UTAMA =========*/
+    displayInterface();
 
-    /*  1. Input dari user : char namafile[]
+    FILE *fptr;
+    while(start == 0){
+        quit = 0;
+        printf("\nMasukkan nama file seed : ");
+        scanf("%s",filename);
+        fptr = fopen(filename, "r");
+        if(fptr == NULL){
+            printf("\nmohon maaf tidak terdapat file %s, coba lagi..\n", filename);
+        }else{
+            seedData = getSeedData(&fptr,&x_dim,&y_dim);
+            displaySeed(seedData, &x_dim, &y_dim);
+            while(quit == 0){
+                pilihan_menu = displayMenu();
+                switch(pilihan_menu)
+                {
+                case 1:
+                    //fungsi Animate
+                    printf("Masukan jumlah ticks : ");
+                    scanf("%d", &num_of_ticks);
+                    seedData = Animate(seedData, &x_dim, &y_dim, num_of_ticks);
+                    break;
+                case 2:
+                    seedData = tick(seedData, &x_dim, &y_dim);
+                    displaySeed(seedData, &x_dim, &y_dim);
+                    break;
+                case 3:
+                    printf("Apakah masih ingin bermain? \n");
+                    printf("ketik Ya / Tidak\n");
+                    printf("pilihan: ");
+                    scanf("%s", pilihan_quit);
+                    if(strncmp(pilihan_quit,"Ya",2)== 0){
+                        fclose(fptr);
+                        quit = 1;
+                    }else{
+                        fclose(fptr);
+                        printf("\nTerima kasih telah bermain.\n");
+                        quit = 1;
+                        start = 1;
+                    }
+                    break;
+                }
+            }
+        }
+    }
 
-    */
-
-    /*  2. Panggil procedure getSeedData()
-    
-        I.S. Nama file adalah input dari user
-        F.S. Terdapat x dan y yang merupakan ukuran dari array
-        dan array yang berisi dari seed data
-
-    */
-    void getSeedData(FILE* fptr, int x, int y, char seeddata[]);
-
-    /*  3. Membuat array char seeddata[] menjadi toroidal
-
-        Ide saran implementasi : kalo misalkan suatu variabel i buat traverse udah lebih
-        dari x atau y, maka akan ngulang dari 0, atau kurang dari x atau y, maka akan 
-        berubah ke x atau y
-
-    */
-
-    /* 4. Panggil Procedure displaySeed()
-
-        Untuk menampilkan seed awal yang sudah diproses dari file eksternal
-    
-    */
-    void displaySeed(char seeddata[]);
-
-    /* 5. Panggil Procedure displayMenu()
-
-        Untuk menampilkan menu interface dengan user. Terdapat menu:
-        a. Animate
-        b. Tick
-        c. Quit
-
-        Ide : pake switch case biasa harusnya. alternatifnya setiap pilihan 
-        terdapat fungsi masing masing untuk memproses misal:
-        Animate()
-        Tick()
-    */
-
-   void displayMenu();
-   void Animate(char seedData[], int num_of_ticks);
-   void Tick(char seedData[]);
-
-   /* 6. 
-        Semua fungsi diatas berada di dalam while loop dengan menggunakan sentinel,
-        sampai user menekan quit dan tidak mau memasukan filename lagi
-
-        jika user tidak mau memasukkan filename, maka program berhenti
-    */
-
-
+    return 0;
 }
