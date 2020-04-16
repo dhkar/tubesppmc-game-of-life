@@ -9,7 +9,11 @@
 *   Catatan : memperbaiki ketiga fungsi
 */
 
+#ifndef DISPLAY_H
+#define DISPLAY_H
+
 void displaySeed(char **seedData, int *x_dim, int *y_dim);
 int displayMenu();
 void displayInterface();
 
+#endif

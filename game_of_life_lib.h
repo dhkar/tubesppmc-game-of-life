@@ -5,9 +5,12 @@
 *   Hari dan Tanggal : Kamis, 16 April 2020
 *   Asisten (NIM) : Arief Hirmanto (13217076)
 *   Nama File : game_of_life_lib.h
-*   Deskripsi : implementasi fungsi animate, tick, getSeedData
+*   Deskripsi : file library untuk conway's game of life
 *   Catatan : ada tambahan fungsi delay dan destroyArray
 */
+
+#ifndef GAME_OF_LIFE_LIB_H
+#define GAME_OF_LIFE_LIB_H
 
 char** getSeedData(FILE **file_pointer, int *x_dim, int *y_dim);
 void destroyArray(char** arr);
@@ -16,3 +19,4 @@ void delay(int milli_seconds);
 char **Animate(char **seedData, int* x_dim, int* y_dim, int num_of_ticks);
 
 
+#endif
