@@ -6,7 +6,7 @@
 *   Asisten (NIM) : Arief Hirmanto (13217076)
 *   Nama File : display.h
 *   Deskripsi : file library untuk display
-*   Catatan : memperbaiki ketiga fungsi display + finishing
+*   Catatan : memperbaiki ketiga fungsi display + finishing 
 */
 
 #include <stdio.h>

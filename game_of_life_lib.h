@@ -6,7 +6,7 @@
 *   Asisten (NIM) : Arief Hirmanto (13217076)
 *   Nama File : game_of_life_lib.h
 *   Deskripsi : file library untuk conway's game of life
-*   Catatan : Perbaikan fitur Animate + Finishing library pendukung program utama main.c
+*   Catatan : Perbaikan fitur Animate + Finishing library pendukung program utama main.c 
 */
 #include <stdio.h>
 #include <stdlib.h>

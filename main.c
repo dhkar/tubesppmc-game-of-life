@@ -6,7 +6,7 @@
 *   Asisten (NIM) : Arief Hirmanto (13217076)
 *   Nama File : main.c
 *   Deskripsi : Program utama dari implementasi Conway's Game Of Life
-*   Catatan : Finishing program utama
+*   Catatan : Finishing program utama 
 */
 #include <stdio.h>
 #include <stdlib.h>
