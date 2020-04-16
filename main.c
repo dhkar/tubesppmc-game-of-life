@@ -4,10 +4,9 @@
 *   Rombongan : A
 *   Hari dan Tanggal : Kamis, 16 April 2020
 *   Asisten (NIM) : Arief Hirmanto (13217076)
-*   Nama File : main1.c
-*   Deskripsi : ga ak merge soalnya coba gabungin main menu sama fungsi
-*   Catatan : menggabungkan game_of_life_lib pada main program (blom selesai)
-                yang punya adnan fungsi Animate ada masalah di newseedTemp
+*   Nama File : main.c
+*   Deskripsi : Program utama dari implementasi Conway's Game Of Life
+*   Catatan : Finishing program utama
 */
 #include <stdio.h>
 #include <stdlib.h>
