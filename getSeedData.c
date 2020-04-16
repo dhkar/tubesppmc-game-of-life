@@ -1,14 +1,14 @@
 /*  EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020
-*   MODUL 9 – TUGAS BESAR
+*   MODUL 9 - TUGAS BESAR
 *   Kelompok : 3
 *   Rombongan : A
-*   Hari dan Tanggal : Jumat, 10 April 2020
+*   Hari dan Tanggal : Kamis, 16 April 2020
 *   Asisten (NIM) : Arief Hirmanto (13217076)
 *   Nama File : getSeedData.c
 *   Deskripsi : Fitur mengubah seedfile menjadi seedarray (untuk file test)
-*               + bisa menjalankan tick untuk sekali iterasi
-*
-*   Catatan : Bantu melia memperbaiki dan improvement fungsi tick()
+*               
+*   Catatan : Finishing fitur konversi seed to array, untuk kebutuhan perihal laporan
+*             (bagian pengujian program),file ini akan dijalankan dan hasilnya di screenshot. 
 *           
 */
 #include <stdio.h>
@@ -172,38 +172,25 @@ int main() {
     int x_dimension,y_dimension;
     char filename[50];
 
-    // printf("Masukkan filename: ");
-    // scanf("%s",filename);
-    fptr = fopen("glider-gun.txt","r");
-    char **seedData,**newseedData;
+    printf("Masukkan filename: ");
+    scanf("%s",filename);
+    fptr = fopen(filename,"r");
+    char **seedData;
+    
+    // Mengassign nilai Array 2D yang didapat dari hasil return fungsi getSeedData
     seedData = getSeedData(&fptr,&x_dimension,&y_dimension);
 
-    // alokasi variabel baru newseedData
-    newseedData = malloc(y_dimension * sizeof(*newseedData));
-    for (int i = 0; i < y_dimension; i++) {
-        newseedData[i] = malloc(x_dimension * sizeof(newseedData[0]));
-    }
-    
-
-    newseedData = tick(seedData,&x_dimension,&y_dimension);
-
+    // Mencetak Array seedData
     for (int i = 0; i < y_dimension; i++) {
         for(int j = 0; j < x_dimension; j++){
             printf("%c",seedData[i][j]);
         }
         printf("\n");
     }
-    printf("\n");
-    for (int i = 0; i < y_dimension; i++) {
-        for(int j = 0; j < x_dimension; j++){
-            printf("%c",newseedData[i][j]);
-        }
-        printf("\n");
-    }
 
+    // Mencetak Dimensi Baris dan Kolom (MXN)
     printf("Dimensi -> Kolom = %d , Baris = %d\n",x_dimension,y_dimension);
     destroyArray(seedData);
-    destroyArray(newseedData);
 
 
     fclose(fptr);
